@@ -1,0 +1,56 @@
+Running Your Executable at Startup in Ubuntu
+Step 1: Locate or Create Your Executable
+Locate the Executable
+After using PyInstaller with your .py file, find the executable in the dist directory within your project folder.
+
+Create the Executable
+If you haven't created the executable yet, install PyInstaller and run it against your script:
+
+bash
+
+pip install pyinstaller
+pyinstaller --onefile --windowed your_script_name.py
+
+
+Step 2: Add the Executable to Startup Applications
+
+A. Open Startup Applications
+Press the Super key (usually the Windows key on most keyboards).
+Type "Startup Applications" and open it.
+B. Add Your Program
+Click "Add" to create a new startup application entry.
+In the "Name" field, type a descriptive name for your program, e.g., "IP Widget".
+In the "Command" field, click "Browse" and navigate to the executable in the dist folder. Select it.
+Optionally, in the "Comment" field, add a brief description of your application.
+Click "Add" to finalize the addition.
+Your application is now set to launch automatically at each system startup.
+
+Step 3: Test Your Setup
+To ensure everything is set up correctly, you might want to restart your computer and check if the application starts as expected.
+
+If the standard method through "Startup Applications" does not work on your Ubuntu machine, another approach involves using the .config/autostart directory in your home folder. This method manually adds applications to startup by creating .desktop files. Here's how to do it:
+
+Creating a .desktop File for Your Application
+Open a terminal and create a new .desktop file in the autostart folder:
+bash
+
+nano ~/.config/autostart/ipwidget.desktop
+Insert the following content into the file, replacing /path/to/your/executable with the absolute path to your executable:
+ini
+
+[Desktop Entry]
+Type=Application
+Name=IP Widget
+Exec=/path/to/your/executable
+X-GNOME-Autostart-enabled=true
+  
+Save and close the file. If you're using nano, do this with Ctrl+O, Enter then Ctrl+X.
+Explanation of Fields:
+Type=Application indicates it's an application.
+Name=IP Widget is the name of your application as it will appear in startup management tools.
+Exec=/path/to/your/executable should point to your widget's executable.
+X-GNOME-Autostart-enabled=true ensures the application is enabled at startup.
+Testing the Setup
+After creating and configuring your .desktop file, restart your computer to test if the application launches correctly at startup.
+
+This method should work on most Linux distributions that use GNOME or compatible desktop environments. If your system uses a different desktop environment, autostart support may vary.
