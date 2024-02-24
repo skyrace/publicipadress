@@ -20,9 +20,9 @@ Upon launching, the widget will immediately fetch and display your current publi
 Pre-Compiled Executable
 In the dist directory, you'll find a pre-compiled executable of the IP Widget program, ready for immediate use. This executable is built for Ubuntu and allows for quick setup without the need for manual compilation.
 
-# To use the pre-compiled executable:
+# To use the pre-compiled executable:
 
-# Navigate to the dist directory.
+# Navigate to the dist directory.
 Make the executable file runnable with the command: chmod +x ip_widget
 Execute the program by double-clicking on it or running ./ip_widget from the terminal.
 Compiling From Source
@@ -40,10 +40,10 @@ Compile the program: pyinstaller --onefile --windowed ip_widget.py
 --windowed prevents a terminal window from opening alongside the application (optional for GUI applications).
 After compiling, the dist directory will contain the newly created executable, which you can run as described above.
 
-#Adding to Startup
+# Adding to Startup
 If you wish to have the IP Widget automatically start upon logging into your Ubuntu desktop, please refer to the instructions provided in the text file named startup-instructions.txt within this repository. These instructions guide you through setting up the application to run at startup either via the "Startup Applications" GUI or by creating a .desktop file in ~/.config/autostart.
 
-#Conclusion
+# Conclusion
 IP Widget provides a simple yet effective way to keep track of your public IP and connection details. Whether using the pre-compiled executable for convenience or compiling the source code for customization, IP Widget is a versatile tool for any Ubuntu user.
 
 If the standard method through "Startup Applications" does not work on your Ubuntu machine, another approach involves using the .config/autostart directory in your home folder. This method manually adds applications to startup by creating .desktop files. Here's how to do it:
